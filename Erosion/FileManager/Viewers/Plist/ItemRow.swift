@@ -36,9 +36,9 @@ struct ItemRow: View {
                     .buttonStyle(.plain)
                     Spacer()
                     if item.type != .data {
-                        Text("\(item.type.label) (\(item.dictVal.count.description))")
+                        Text("\(localized(item.type.label))（\(item.dictVal.count)）")
                     } else {
-                        Text(item.type.label)
+                        Text(localized: item.type.label)
                     }
                     Image(systemName: "info.circle")
                         .overlay {

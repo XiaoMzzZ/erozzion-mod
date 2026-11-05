@@ -4,10 +4,16 @@
 <dict>
 	<key>CFBundleName</key>
 	<string>Erosion mod</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>zh-Hans</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>zh-Hans</string>
+	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>Erosion uses the local network for Airlift device pairing.</string>
+	<string>Erosion 使用本地网络进行 Airlift 设备配对。</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_remotepairing-pairable-host._tcp</string>
@@ -18,18 +24,18 @@
 		<string>audio</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Erosion is testing the iOS microphone permission prompt. Prepare does not record audio.</string>
+	<string>Erosion 正在测试 iOS 麦克风权限弹窗。准备过程不会录音。</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Erosion is testing the iOS camera permission prompt. Prepare does not capture images.</string>
+	<string>Erosion 正在测试 iOS 相机权限弹窗。准备过程不会拍摄图像。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Erosion is testing the Photos access prompt. Prepare does not read or modify your photo library.</string>
+	<string>Erosion 正在测试照片访问权限弹窗。准备过程不会读取或修改你的照片库。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Erosion is testing the location permission prompt. Prepare does not collect or store your location.</string>
+	<string>Erosion 正在测试定位权限弹窗。准备过程不会收集或存储你的位置信息。</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Erosion is testing the Contacts permission prompt. Prepare does not read or store your contacts.</string>
+	<string>Erosion 正在测试通讯录权限弹窗。准备过程不会读取或存储你的通讯录。</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Erosion is testing the Face ID system interface. Prepare does not store biometric data.</string>
+	<string>Erosion 正在测试面容 ID 系统界面。准备过程不会存储生物识别数据。</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Erosion is testing the Bluetooth permission prompt. Prepare does not scan for or connect to nearby devices.</string>
+	<string>Erosion 正在测试蓝牙权限弹窗。准备过程不会扫描或连接附近的设备。</string>
 </dict>
 </plist>

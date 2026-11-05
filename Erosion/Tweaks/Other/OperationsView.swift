@@ -282,7 +282,7 @@ struct OperationsView: View {
             try? FileManager.default.removeItem(at: localURL)
             airliftOperationRunning = false
             if success {
-                Alertinator.shared.alert(title: "File moved", body: "The imported file was written to \(targetPath). The source import remains on this device.", showCancel: false, actionLabel: "OK", action: {})
+                Alertinator.shared.alert(title: "File moved", body: "导入的文件已写入 \(targetPath)。源文件仍保留在此设备上。", showCancel: false, actionLabel: "OK", action: {})
                 Haptic.shared.play(.soft)
             } else {
                 Alertinator.shared.alert(title: "Failed to move file", body: "Check Home → Logs for the Airlift File Operations result.")

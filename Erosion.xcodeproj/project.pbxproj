@@ -123,11 +123,12 @@
 				};
 			};
 			buildConfigurationList = 151457FA302FE21A00DDFE07 /* Build configuration list for PBXProject "Erosion" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 151457F6302FE21A00DDFE07;
 			minimizedProjectReferenceProxies = 1;

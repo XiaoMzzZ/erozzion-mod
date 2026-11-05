@@ -134,7 +134,7 @@ struct AdvancedKeyEditorView: View {
             Haptic.shared.play(.soft)
             Alertinator.shared.alert(
                 title: "MobileGestalt Saved",
-                body: "\(key) was written and verified on disk."
+                body: "\(key) 已写入并通过磁盘校验。"
             )
         } catch {
             errorMessage = error.localizedDescription
@@ -224,9 +224,9 @@ struct AdvancedKeyEditorView: View {
     private func valueDescription(_ value: Any) -> String {
         if let string = value as? String { return string }
         if let number = value as? NSNumber { return number.stringValue }
-        if let data = value as? Data { return "Data (\(data.count) bytes)" }
-        if let dict = value as? [String: Any] { return "Dictionary (\(dict.count) keys)" }
-        if let array = value as? [Any] { return "Array (\(array.count) items)" }
+        if let data = value as? Data { return "数据（\(data.count) 字节）" }
+        if let dict = value as? [String: Any] { return "字典（\(dict.count) 个键）" }
+        if let array = value as? [Any] { return "数组（\(array.count) 项）" }
         return String(describing: value)
     }
 }
@@ -254,7 +254,7 @@ private struct CacheDataNode: View {
     var body: some View {
         if let dict = value as? [String: Any] {
             if dict.isEmpty {
-                LabeledContent(label, value: "Empty dictionary")
+                LabeledContent(label, value: localized("Empty dictionary"))
             } else {
                 DisclosureGroup {
                     ForEach(dict.keys.sorted(), id: \.self) { key in
@@ -265,7 +265,7 @@ private struct CacheDataNode: View {
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(label).font(.system(.body, design: .monospaced))
-                        Text("Dictionary (\(dict.count) keys)")
+                        Text("字典（\(dict.count) 个键）")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -279,7 +279,7 @@ private struct CacheDataNode: View {
             } label: {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(label).font(.system(.body, design: .monospaced))
-                    Text("Array (\(array.count) items)")
+                    Text("数组（\(array.count) 项）")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -290,7 +290,7 @@ private struct CacheDataNode: View {
             } label: {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(label).font(.system(.body, design: .monospaced))
-                    Text("Data (\(data.count) bytes) — tap to view hex")
+                    Text("数据（\(data.count) 字节）— 点击查看十六进制")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

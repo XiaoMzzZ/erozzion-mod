@@ -191,10 +191,10 @@ struct AirliftView: View {
         }
 
         let kind = airlift.readKind
-        let objectName = kind == .folder ? "directory" : "file"
+        let objectName = kind == .folder ? localized("directory") : localized("file")
         Alertinator.shared.alert(
-            title: "Delete this \(objectName)?",
-            body: "This permanently deletes the selected remote \(objectName) at \(target). This action cannot be undone.",
+            title: "删除此\(objectName)？",
+            body: "这将永久删除远程目标 \(target) 处的\(objectName)，且无法撤销。",
             actionLabel: "Confirm",
             actionStyle: .destructive,
             action: { deleteRemoteTarget(at: target, kind: kind) }
@@ -207,7 +207,7 @@ struct AirliftView: View {
             let succeeded = await airlift.removeRemotePath(target, logFeature: "airlift-delete")
             deletingRemoteTarget = false
 
-            let objectName = kind == .folder ? "directory" : "file"
+            let objectName = kind == .folder ? localized("directory") : localized("file")
             if succeeded {
                 let normalizedPath = URL(fileURLWithPath: target).standardizedFileURL.path
                 let isExpectedUserPath = normalizedPath == "/var/mobile"
@@ -217,12 +217,12 @@ struct AirliftView: View {
                 let qualifier = isExpectedUserPath ? "" : " (?)"
                 Alertinator.shared.alert(
                     title: "Successfully deleted",
-                    body: "The \(objectName) \(target) was successfully deleted.\(qualifier)"
+                    body: "\(objectName) \(target) 已成功删除。\(qualifier)"
                 )
             } else {
                 Alertinator.shared.alert(
                     title: "Failed to delete remote target",
-                    body: "The \(objectName) could not be deleted. Check Home → Logs for details."
+                    body: "无法删除\(objectName)。请前往 主页 → 日志 查看详情。"
                 )
             }
         }
@@ -299,7 +299,7 @@ struct AirliftView: View {
                 Spacer(minLength: 8)
                 Picker("Object", selection: $airlift.readKind) {
                     ForEach(AirliftBridge.ReadKind.allCases) { kind in
-                        Text(kind.rawValue).tag(kind)
+                        Text(localized: kind.rawValue).tag(kind)
                     }
                 }
                 .labelsHidden()
@@ -588,9 +588,11 @@ struct AirliftView: View {
 
     private var pairButtonTitle: String {
         if isPairing {
-            return hasLivePairPIN ? (livePairPIN ?? "Pairing…") : "Pairing…"
+            // livePairPIN is a live 6-digit code, not UI text: it must never be run
+            // through the strings table. Only the static fallbacks are localized.
+            return hasLivePairPIN ? (livePairPIN ?? localized("Pairing…")) : localized("Pairing…")
         }
-        return "Pair"
+        return localized("Pair")
     }
 
 }

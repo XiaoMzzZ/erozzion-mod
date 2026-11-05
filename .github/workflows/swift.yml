@@ -1,5 +1,8 @@
 name: Build Erosion IPA
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
@@ -170,6 +173,20 @@ jobs:
         run: |
           echo "=== IPA FILES ==="
           find . -type f -name "*.ipa" -print
+
+      # 信息性步骤：只打印，不会让构建失败。
+      # 用来确认 zh-Hans 语言包确实被 Xcode 打进了 App bundle。
+      - name: Report zh-Hans localization
+        run: |
+          APP="/tmp/erosion-ipa-verify/Payload/Erosion.app"
+          echo "=== localization folders in bundle ==="
+          (ls -1 "$APP" | grep -i 'lproj') || echo "::warning::bundle 中没有 .lproj 目录，汉化不会生效"
+          echo "=== zh-Hans Localizable.strings ==="
+          (plutil -p "$APP/zh-Hans.lproj/Localizable.strings" | wc -l) || echo "::warning::zh-Hans.lproj/Localizable.strings 缺失或无法解析，汉化不会生效"
+          echo "=== CFBundleLocalizations ==="
+          (/usr/libexec/PlistBuddy -c 'Print :CFBundleLocalizations' "$APP/Info.plist") || echo "(CFBundleLocalizations missing)"
+          echo "=== CFBundleDevelopmentRegion ==="
+          (/usr/libexec/PlistBuddy -c 'Print :CFBundleDevelopmentRegion' "$APP/Info.plist") || echo "(CFBundleDevelopmentRegion missing)"
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4

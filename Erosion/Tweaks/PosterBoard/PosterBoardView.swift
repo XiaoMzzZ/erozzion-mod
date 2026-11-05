@@ -63,7 +63,7 @@ struct PosterBoardView: View {
                                 Text(tendies.name)
                                     .lineLimit(1)
                                     .fontWeight(.medium)
-                                Text("\(tendies.descrNames.count) wallpaper" + (tendies.descrNames.count == 1 ? "" : "s"))
+                                Text("\(tendies.descrNames.count) 张壁纸")
                                     .font(.footnote)
                                     .foregroundStyle(.secondary)
                             }

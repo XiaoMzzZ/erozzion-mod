@@ -74,7 +74,7 @@ struct InfoViewer: View {
                     HeaderLabel("Permissions", symbol: "shield")
                 }
             }
-            .navigationTitle("\(file.type.rawValue.capitalized) Info")
+            .navigationTitle("\(localized(file.type.rawValue.capitalized))信息")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(.insetGrouped)
             .toolbar {
@@ -118,7 +118,7 @@ struct InfoViewer: View {
         
         var body: some View {
             HStack {
-                Text(label)
+                Text(localized: label)
                 Spacer()
                 Text(string)
                     .foregroundStyle(.secondary)
@@ -144,7 +144,7 @@ struct InfoViewer: View {
         
         var body: some View {
             HStack {
-                Text(label)
+                Text(localized: label)
                 Spacer()
                 Image(systemName: bool ? "checkmark" : "xmark")
                     .foregroundStyle(.secondary)

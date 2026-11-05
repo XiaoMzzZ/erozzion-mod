@@ -86,7 +86,7 @@ struct TweaksView: View {
             .alert("Airlift required", isPresented: Binding(get: { blockedFeature != nil }, set: { if !$0 { blockedFeature = nil } })) {
                 Button("OK", role: .cancel) { blockedFeature = nil }
             } message: {
-                Text("Enable LocalDevVPN and import a valid pairing file in Airlift before opening \(blockedFeature ?? "this feature").")
+                Text("请先启用 LocalDevVPN 并在 Airlift 中导入有效的配对文件，然后再打开\(localized(blockedFeature ?? "此功能"))。")
             }
         }
     }
@@ -109,7 +109,7 @@ struct TweaksView: View {
     @ViewBuilder
     private func blockedFeatureRow(_ title: String) -> some View {
         HStack(spacing: 16) {
-            Text(title)
+            Text(localized: title)
                 .foregroundStyle(.secondary)
 
             Spacer(minLength: 12)

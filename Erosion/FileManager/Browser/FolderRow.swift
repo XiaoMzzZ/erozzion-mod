@@ -232,7 +232,7 @@ struct FolderRow: View {
                                             try fm.removeItem(at: file.fileURL)
                                             mgr.refreshFiles.toggle()
                                         } catch {
-                                            Alertinator.shared.alert(title: "Remote delete succeeded", body: "The snapshot could not be removed locally: \(error.localizedDescription)")
+                                            Alertinator.shared.alert(title: "Remote delete succeeded", body: "无法在本地移除快照：\(error.localizedDescription)")
                                         }
                                     } else {
                                         Alertinator.shared.alert(title: "Failed to delete folder!", body: "The remote Airlift delete failed. The local snapshot was kept unchanged. Check the Airlift log.")

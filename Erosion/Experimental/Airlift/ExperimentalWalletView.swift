@@ -182,7 +182,7 @@ struct ExperimentalWalletView: View {
             Text("Overlay Type")
             Picker("", selection: $walletCards.overlayType) {
                 ForEach(WalletCardOverlayType.allCases) { option in
-                    Text(option.title).tag(option)
+                    Text(localized: option.title).tag(option)
                 }
             }
         }

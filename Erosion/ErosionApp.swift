@@ -110,7 +110,7 @@ struct ErosionApp: App {
                         )
                     }
                 } else if !isSupported() && !weOnADebugBuild {
-                    Alertinator.shared.alert(title: "Your \(device.systemName) version is not supported!", body: AppMsg.unsupported, showCancel: false, actionLabel: "Exit", action: { exitinator() })
+                    Alertinator.shared.alert(title: "你的 \(device.systemName) 版本不受支持！", body: AppMsg.unsupported, showCancel: false, actionLabel: "Exit", action: { exitinator() })
                 }
             }
             .overlay {

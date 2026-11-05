@@ -25,7 +25,7 @@ struct AppInfoCell: View {
                 Text(appName)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(Color.white)
-                Text("Version \(appVersion) (\(build))")
+                Text("版本 \(appVersion)（\(build)）")
                     .foregroundStyle(Color.white)
             }
         }

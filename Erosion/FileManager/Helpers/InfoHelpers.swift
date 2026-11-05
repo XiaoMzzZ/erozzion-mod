@@ -112,10 +112,10 @@ func diagnoseFolderLabel(url containerURL: URL) -> FolderLabelDiagnostic {
             if let identifier = parsed.identifier {
                 return FolderLabelDiagnostic(
                     identifier: identifier,
-                    detail: "\(candidate.lastPathComponent): direct read succeeded; \(parsed.detail)"
+                    detail: "\(candidate.lastPathComponent)：直接读取成功；\(parsed.detail)"
                 )
             }
-            attempts.append("\(candidate.lastPathComponent): direct read succeeded; \(parsed.detail)")
+            attempts.append("\(candidate.lastPathComponent)：直接读取成功；\(parsed.detail)")
         } catch {
             attempts.append("\(candidate.lastPathComponent): direct read failed (\(error.localizedDescription))")
         }
@@ -145,10 +145,10 @@ func diagnoseFolderLabel(url containerURL: URL) -> FolderLabelDiagnostic {
         if let identifier = parsed.identifier {
             return FolderLabelDiagnostic(
                 identifier: identifier,
-                detail: "\(candidate.lastPathComponent): BadQuery-assisted read succeeded; \(parsed.detail)"
+                detail: "\(candidate.lastPathComponent)：BadQuery 辅助读取成功；\(parsed.detail)"
             )
         }
-        attempts.append("\(candidate.lastPathComponent): BadQuery-assisted read succeeded; \(parsed.detail)")
+        attempts.append("\(candidate.lastPathComponent)：BadQuery 辅助读取成功；\(parsed.detail)")
     }
 
     return FolderLabelDiagnostic(identifier: nil, detail: attempts.joined(separator: " | "))

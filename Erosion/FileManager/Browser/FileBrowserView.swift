@@ -614,10 +614,10 @@ struct FileBrowserView: View {
                             chosenSort = option
                         } label: {
                             if chosenSort == option {
-                                Label(option.label, systemImage: "checkmark")
+                                Label(localized(option.label), systemImage: "checkmark")
                                     .tag(option)
                             } else {
-                                Text(option.label)
+                                Text(localized: option.label)
                                     .tag(option)
                             }
                         }
@@ -678,7 +678,7 @@ struct FileBrowserView: View {
                             }
                             
                             Button {
-                                Alertinator.shared.prompt(title: "What would you like to call your new property list?", placeholder: "Plist Name", completion: { name in
+                                Alertinator.shared.prompt(title: "What would you like to call your new property list?", placeholder: localized("Plist Name"), completion: { name in
                                     let name = name ?? ""
                                     guard !name.isEmpty else { return }
                                     if hasAirliftWriteContext && !remoteMutationAllowed() {
@@ -714,7 +714,7 @@ struct FileBrowserView: View {
                             }
                             
                             Button {
-                                Alertinator.shared.prompt(title: "What would you like to call your new folder?", placeholder: "Folder Name", completion: { name in
+                                Alertinator.shared.prompt(title: "What would you like to call your new folder?", placeholder: localized("Folder Name"), completion: { name in
                                     let name = name ?? ""
                                     guard !name.isEmpty else { return }
                                     if hasAirliftWriteContext && !remoteMutationAllowed() {

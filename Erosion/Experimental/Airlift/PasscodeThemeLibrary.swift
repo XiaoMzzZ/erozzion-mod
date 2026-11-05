@@ -326,7 +326,7 @@ struct PasscodeExploreView: View {
             try data.write(to: tempURL, options: .atomic)
             _ = try PasscodeThemeLibraryStore.shared.importTheme(from: tempURL, preferredName: theme.name)
             Haptic.shared.play(.soft)
-            Alertinator.shared.alert(title: "Imported into Library", body: "\(theme.name) is now available in Library.")
+            Alertinator.shared.alert(title: "Imported into Library", body: "\(theme.name) 现已加入库中。")
         } catch {
             Alertinator.shared.alert(title: "Failed to import theme", body: error.localizedDescription)
         }
@@ -379,7 +379,7 @@ struct PasscodeLibraryView: View {
                                 Text(theme.name)
                                     .lineLimit(1)
                                     .fontWeight(.medium)
-                                Text("\(theme.keyCount) key" + (theme.keyCount == 1 ? "" : "s"))
+                                Text("\(theme.keyCount) 个键位")
                                     .font(.footnote)
                                     .foregroundStyle(.secondary)
                             }

@@ -16,9 +16,9 @@ public class Alertinator {
     
     public func alert(title: String, body: String, showCancel: Bool = true) {
         Task { @MainActor in
-            alertController = UIAlertController(title: title, message: body, preferredStyle: .alert)
+            alertController = UIAlertController(title: localized(title), message: localized(body), preferredStyle: .alert)
             if showCancel {
-                alertController?.addAction(.init(title: "OK", style: .cancel))
+                alertController?.addAction(.init(title: localized("OK"), style: .cancel))
             }
             alertController?.view.tintColor = UIColor(named: "AccentColor")
             self.present(alertController!)
@@ -34,12 +34,12 @@ public class Alertinator {
         action: @escaping () -> Void
     ) {
         Task { @MainActor in
-            alertController = UIAlertController(title: title, message: body, preferredStyle: .alert)
-            alertController?.addAction(.init(title: actionLabel, style: actionStyle) { _ in
+            alertController = UIAlertController(title: localized(title), message: localized(body), preferredStyle: .alert)
+            alertController?.addAction(.init(title: localized(actionLabel), style: actionStyle) { _ in
                 action()
             })
             if showCancel {
-                alertController?.addAction(.init(title: "Cancel", style: .cancel))
+                alertController?.addAction(.init(title: localized("Cancel"), style: .cancel))
             }
             alertController?.view.tintColor = UIColor(named: "AccentColor")
             self.present(alertController!)
@@ -48,9 +48,14 @@ public class Alertinator {
     
     public func prompt(title: String, placeholder: String = "", text: String = "", showCancel: Bool = true, completion: @escaping (String?) async -> Void) {
         Task { @MainActor in
-            alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+            alertController = UIAlertController(title: localized(title), message: nil, preferredStyle: .alert)
             alertController?.addTextField { field in
                 if !placeholder.isEmpty {
+                    // Deliberately NOT localized here: several call sites pass a live
+                    // file name as the placeholder (e.g. rename), and running that
+                    // through the strings table would rewrite the user's file name if
+                    // it happened to collide with a UI key. Static placeholders are
+                    // localized at their call sites instead.
                     field.placeholder = placeholder
                 }
                 if !text.isEmpty {
@@ -58,13 +63,13 @@ public class Alertinator {
                 }
             }
             if showCancel {
-                alertController?.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                alertController?.addAction(UIAlertAction(title: localized("Cancel"), style: .cancel) { _ in
                     Task {
                         await completion(nil)
                     }
                 })
             }
-            alertController?.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            alertController?.addAction(UIAlertAction(title: localized("OK"), style: .default) { _ in
                 let field = self.alertController?.textFields?.first
                 Task {
                     await completion(field?.text)

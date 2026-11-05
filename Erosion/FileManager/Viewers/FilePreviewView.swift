@@ -308,7 +308,7 @@ private struct BinaryInfoViewer: View {
 
         var body: some View {
             VStack(alignment: .leading, spacing: 1) {
-                Text(label)
+                Text(localized: label)
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(.secondary)
                 Text(value)
@@ -498,7 +498,7 @@ private struct HexDumpView: View {
                         }
 
                         if totalBytes > maxBytes {
-                            Text("… truncated at 1 MiB (total \(totalBytes) bytes)")
+                            Text("… 已在 1 MiB 处截断（共 \(totalBytes) 字节）")
                                 .font(.system(size: 10, design: .monospaced))
                                 .foregroundStyle(.secondary)
                                 .padding(12)
@@ -526,7 +526,7 @@ private struct HexDumpView: View {
             totalBytes = fileData.count
             data = Data(fileData.prefix(maxBytes))
         } catch {
-            errorMessage = "Unable to read file: \(error.localizedDescription)"
+            errorMessage = "无法读取文件：\(error.localizedDescription)"
         }
         isLoading = false
     }

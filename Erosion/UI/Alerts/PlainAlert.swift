@@ -22,10 +22,10 @@ struct PlainAlert: View {
             }
             VStack(alignment: .leading) {
                 if !title.isEmpty {
-                    Text(title)
+                    Text(localized: title)
                         .fontWeight(.medium)
                 }
-                Text(text)
+                Text(localized: text)
                     .font(!title.isEmpty ? .subheadline : .body)
             }
         }

@@ -75,10 +75,17 @@ enum TCCPermission: String, CaseIterable, Identifiable {
         }
     }
 
-    var promptTitle: String { "Allow “Erosion” to use \(promptSubject)?" }
+    var promptTitle: String {
+        // The subject is a runtime value, so the template is looked up as a format
+        // string and the (already localized) subject is substituted into it.
+        String(
+            format: NSLocalizedString("Allow “Erosion” to use %@?", comment: ""),
+            localized(promptSubject)
+        )
+    }
 
     var promptDetail: String {
-        "This is a preview of how TCC notifications will look."
+        localized("This is a preview of how TCC notifications will look.")
     }
 }
 
@@ -259,7 +266,7 @@ struct TCCView: View {
                     .foregroundStyle(Color(.label))
                 Picker("Permission", selection: $selectedPermissionRaw) {
                     ForEach(TCCPermission.allCases) { permission in
-                        Text(permission.rawValue).tag(permission.rawValue)
+                        Text(localized: permission.rawValue).tag(permission.rawValue)
                     }
                 }
                 .labelsHidden()
@@ -347,7 +354,7 @@ struct TCCView: View {
                 }
             } label: {
                 Label(
-                    didPrepare ? "Prepared" : (preparer.isPreparing ? "Preparing…" : "Prepare"),
+                    localized(didPrepare ? "Prepared" : (preparer.isPreparing ? "Preparing…" : "Prepare")),
                     systemImage: "checkmark.shield.fill"
                 )
             }
@@ -391,7 +398,7 @@ struct TCCView: View {
     }
 
     private func promptButton(_ title: String) -> some View {
-        Text(title)
+        Text(localized: title)
             .font(.system(size: 17, weight: .medium))
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)

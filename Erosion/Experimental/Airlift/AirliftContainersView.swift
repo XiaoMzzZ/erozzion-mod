@@ -182,7 +182,7 @@ struct AirliftContainersView: View {
             Section {
                 Picker("Container type", selection: $selectedCategory) {
                     ForEach(AirliftContainerCategory.allCases) { category in
-                        Text(category.title).tag(category)
+                        Text(localized: category.title).tag(category)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -214,7 +214,7 @@ struct AirliftContainersView: View {
             Section {
                 if visibleResults.isEmpty {
                     ContentUnavailableView(
-                        categoryScanRunning ? "Scanning…" : "No matching containers",
+                        localized(categoryScanRunning ? "Scanning…" : "No matching containers"),
                         systemImage: categoryScanRunning ? "arrow.triangle.2.circlepath" : selectedCategory.symbol
                     )
                 } else {
@@ -230,12 +230,12 @@ struct AirliftContainersView: View {
                     }
                 }
             } header: {
-                Label(selectedCategory.title, systemImage: selectedCategory.symbol)
+                Label(localized(selectedCategory.title), systemImage: selectedCategory.symbol)
             }
 
             Section {
                 ScrollView(.vertical, showsIndicators: false) {
-                    Text(selectedLogs.isEmpty ? "No output yet." : selectedLogs.joined(separator: "\n"))
+                    Text(selectedLogs.isEmpty ? localized("No output yet.") : selectedLogs.joined(separator: "\n"))
                         .font(.system(size: 10, weight: .regular, design: .monospaced))
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)

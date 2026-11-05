@@ -38,7 +38,7 @@ struct GestaltView: View {
                 Section {
                     HStack {
                         Picker("Subtype", selection: $mgSubtype) {
-                            Text("Original (\(mgOgSubtype))").tag(mgOgSubtype)
+                            Text("原始（\(mgOgSubtype)）").tag(mgOgSubtype)
                             if isDynamIslandHD() && doubleSysVrs() < 19.0 {
                                 Text("Disable Dynamic Island").tag(2436)
                             }
@@ -402,7 +402,7 @@ struct GestaltView: View {
             }
         } catch {
             print("(mg) failed to apply mobilegestalt: \(error.localizedDescription)")
-            Alertinator.shared.alert(title: "Failed to apply MobileGestalt!", body: "Error: \(error.localizedDescription)")
+            Alertinator.shared.alert(title: "Failed to apply MobileGestalt!", body: "错误：\(error.localizedDescription)")
         }
     }
     

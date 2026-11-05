@@ -26,7 +26,7 @@ struct ModifyItemPage: View {
                 Picker("Type", selection: $item.type) {
                     ForEach(PlistItemType.allCases, id: \.self) { type in
                         if type != .unknown {
-                            Text(type.label).id(type)
+                            Text(localized: type.label).id(type)
                         }
                     }
                 }
@@ -60,12 +60,12 @@ struct ModifyItemPage: View {
                 case .bool:
                     Toggle(item.boolVal.description.capitalized, isOn: $item.boolVal)
                 default:
-                    TextField(item.type.label, text: $item.stringVal)
+                    TextField(localized(item.type.label), text: $item.stringVal)
                         .disabled(!isEditing)
                 }
             } header: {
                 if item.type == .dict || item.type == .array {
-                    HeaderLabel("Value (\(item.dictVal.count) items)", symbol: "character.cursor.ibeam")
+                    HeaderLabel("值（\(item.dictVal.count) 项）", symbol: "character.cursor.ibeam")
                 } else {
                     HeaderLabel("Value", symbol: "character.cursor.ibeam")
                 }

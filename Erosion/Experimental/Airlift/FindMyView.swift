@@ -320,7 +320,7 @@ struct FindMyView: View {
                     Spacer(minLength: 8)
                     Picker("Target", selection: $selectedStatusRaw) {
                         ForEach(FindMyStatusOption.allCases) { option in
-                            Text(option.rawValue).tag(option.rawValue)
+                            Text(localized: option.rawValue).tag(option.rawValue)
                         }
                     }
                     .labelsHidden()
@@ -795,7 +795,7 @@ struct FindMyView: View {
             } else {
                 Alertinator.shared.alert(
                     title: "Some changes could not be applied",
-                    body: "Find My: \(findMySucceeded ? "success" : "failed"). TCC: \(tccSucceeded ? "success" : "failed"). Check the Airlift log for details."
+                    body: "查找：\(findMySucceeded ? "成功" : "失败")。TCC：\(tccSucceeded ? "成功" : "失败")。详情请查看 Airlift 日志。"
                 )
             }
             return

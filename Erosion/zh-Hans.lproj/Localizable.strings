@@ -1,0 +1,620 @@
+/* Erosion 简体中文（zh-Hans）本地化 */
+/* 术语保留：Respring / SpringBoard / MobileGestalt / PosterBoard / AFC / App Group / Airlift / TCC / Gestalt / Exploit */
+
+/* ⚠ 以下条目的值与英文原文逐字相同，是有意为之，不要翻译：
+   CacheExtra / CacheData / MobileGestalt / PosterBoard / AFC / Airlift / TCC /
+   Respring / Bin / Sbin / Mach-O / UTType / Apple Pencil
+   原因：它们同时被当作运行时标识符使用 ——
+   - AdvancedKeyEditorView 把 "CacheExtra" / "CacheData" 当分区名传给 HeaderLabel，
+     一旦翻译，分区标题会变成中文而旁边的 Picker 仍是原始英文键名；
+   - TCCPermission / FindMyStatusOption 等的 rawValue 是 UserDefaults 的存储键，
+     翻译会让已保存的用户设置失效。
+   新增语言时同样保持这些值不变。 */
+
+/* ---- Erosion/App/LogView.swift ---- */
+"Copy Output" = "复制输出";
+"Export Logs" = "导出日志";
+
+/* ---- Erosion/App/SettingsView.swift ---- */
+"About" = "关于";
+"App Settings" = "App 设置";
+"Auto-Respring" = "自动 Respring";
+"Automatically resprings your device after applying a tweak." = "应用调整后自动 Respring 设备。";
+"Close" = "关闭";
+"Credits" = "致谢";
+"Developed and published bad_query sandbox escape." = "开发并发布了 bad_query 沙盒逃逸。";
+"Developed WebView respring method." = "开发了 WebView Respring 方法。";
+"Display not readable paths" = "显示不可读路径";
+"Made with love by the [jailbreak.party](https://jailbreak.party) team.\nNeed support or want to know about new releases? Join the [jailbreak.party Discord server!](https://jailbreak.party/discord)" = "由 [jailbreak.party](https://jailbreak.party) 团队用爱制作。\n需要帮助或想了解新版本？加入 [jailbreak.party Discord 服务器！](https://jailbreak.party/discord)";
+"Minor UI adjustments, respring implementation, and various backend functions." = "少量界面调整、Respring 实现及多项后端功能。";
+"Primary developer and maintainer." = "主要开发者与维护者。";
+"Settings" = "设置";
+"Various backend components." = "多项后端组件。";
+
+/* ---- Erosion/ContentView.swift ---- */
+"Actions" = "操作";
+"Explore" = "探索";
+"Logs" = "日志";
+"Respring" = "Respring";
+"Theming" = "主题";
+
+/* ---- Erosion/ErosionApp.swift ---- */
+"Airlift compatibility mode" = "Airlift 兼容模式";
+"Exit" = "退出";
+"File Browser" = "文件浏览";
+"Home" = "主页";
+"Ok" = "好";
+"This iOS build is not supported by bad_query. Airlift will be used in this mode. Go to File Browser —> Airlift to see what you need to use this app." = "当前 iOS 版本不受 bad_query 支持。此模式下将改用 Airlift。前往 文件浏览 —> Airlift 了解使用本 App 所需的条件。";
+"Tweaks" = "调整";
+
+/* ---- Erosion/ErosionManager.swift ---- */
+"Check error logs for more detailed information." = "查看错误日志以获取更详细的信息。";
+"PosterBoard" = "PosterBoard";
+"Respring your device for changes to take effect." = "请 Respring 设备以使更改生效。";
+"Restart the app and try again. If this issue persists, your device may be unsupported, or this specific tweak may not work on your device properly." = "请重启 App 后重试。若问题依旧，你的设备可能不受支持，或此调整在你的设备上无法正常工作。";
+"Wallpapers" = "壁纸";
+"We're sorry, but the exploits that Erosion rely on are patched in this version. Please exit the app." = "抱歉，Erosion 依赖的 Exploit 在此系统版本中已被修复。请退出 App。";
+
+/* ---- Erosion/Experimental/Airlift/AirliftAppContainersView.swift ---- */
+"App Scan Log" = "App 扫描日志";
+"Application Containers" = "应用容器";
+"Find an app" = "查找 App";
+"Results" = "结果";
+"Scanning…" = "扫描中…";
+"Search bundle ID or path…" = "搜索 Bundle ID 或路径…";
+
+/* ---- Erosion/Experimental/Airlift/AirliftAppGroupContainersView.swift ---- */
+"AFC" = "AFC";
+"App Group Containers" = "App Group 容器";
+"Automatic Scan Log" = "自动扫描日志";
+"Bundle ID Resolution" = "Bundle ID 解析";
+"Find a container" = "查找容器";
+"Find a group" = "查找 App Group";
+"No matching containers" = "没有匹配的容器";
+
+/* ---- Erosion/Experimental/Airlift/AirliftBridge.swift ---- */
+"Custom Passcode" = "自定义密码界面";
+"Directory" = "目录";
+"Enter a Target path" = "请输入目标路径";
+"File" = "文件";
+"Import failed" = "导入失败";
+"No pairing file" = "没有配对文件";
+"OK" = "好";
+"Unknown" = "未知";
+
+/* ---- Erosion/Experimental/Airlift/AirliftContainersView.swift ---- */
+"AppGroups" = "App Group";
+"Applications" = "应用";
+"Container type" = "容器类型";
+"Containers" = "容器";
+"Daemons" = "守护进程";
+"No output yet." = "暂无输出。";
+"Plugins" = "插件";
+
+/* ---- Erosion/Experimental/Airlift/AirliftView.swift ---- */
+"Airlift" = "Airlift";
+"Airlift Note" = "Airlift 说明";
+"Airlift's active pairing file is missing or unreadable. Import or create a pairing first." = "Airlift 当前使用的配对文件缺失或无法读取。请先导入或创建配对文件。";
+"An Airlift read, write, exploit, passcode apply, or container scan is still running. Wait for it to finish, then try again." = "Airlift 的读取、写入、Exploit、密码界面应用或容器扫描仍在进行。请等待完成后再试。";
+"Cannot clear tmp yet" = "暂时无法清理 tmp";
+"Clear tmp" = "清理 tmp";
+"Clear tmp?" = "清理 tmp？";
+"Confirm" = "确认";
+"Connection" = "连接";
+"Delete File" = "删除文件";
+"Delete Pairing" = "删除配对文件";
+"directory" = "目录";
+"Enter an absolute remote file or directory path other than '/'." = "请输入除 '/' 以外的远程文件或目录绝对路径。";
+"Export" = "导出";
+"Export Pairing" = "导出配对文件";
+"Export Pairing unavailable" = "无法导出配对文件";
+"Failed to delete remote target" = "无法删除远程目标";
+"file" = "文件";
+"Go to Settings —> Privacy & Security —> Developer Mode —> Pair with Erosion" = "前往 设置 —> 隐私与安全性 —> 开发者模式 —> 与 Erosion 配对";
+"Import Pairing" = "导入配对文件";
+"Invalid Path" = "路径无效";
+"No read snapshot" = "没有读取快照";
+"Object" = "对象";
+"Other" = "其他";
+"Pair" = "配对";
+"Pairing" = "配对";
+"Pairing…" = "配对中…";
+"Path" = "路径";
+"Preview" = "预览";
+"Read-only snapshot" = "只读快照";
+"Run Exploit" = "运行 Exploit";
+"Search paths or words" = "搜索路径或关键字";
+"Share / Export" = "分享 / 导出";
+"Successfully deleted" = "删除成功";
+"Target" = "目标";
+"This removes everything inside Erosion's app temporary directory (the tmp directory shown in Airlift staging paths). Do not run it while a read, write, exploit, or theme operation is active." = "这会清空 Erosion 临时目录（Airlift 暂存路径中显示的 tmp 目录）内的全部内容。读取、写入、Exploit 或主题操作进行中时请勿执行。";
+"View" = "查看";
+
+/* ---- Erosion/Experimental/Airlift/ExperimentalPasscodeView.swift ---- */
+"Apply" = "应用";
+"Are you sure you'd like to reset your passcode keys?" = "确定要重置密码键位吗？";
+"Cancel" = "取消";
+"Clear Keys" = "清除键位";
+"Failed to apply custom passcode keys!" = "自定义密码键位应用失败！";
+"Failed to reset passcode keys!" = "密码键位重置失败！";
+"Get Current Keys" = "获取当前键位";
+"Height" = "高";
+"Import .passthm" = "导入 .passthm";
+"Key Size" = "键位尺寸";
+"Library" = "库";
+"Lock your device to see the new passcode artwork." = "锁屏即可看到新的密码界面图。";
+"Mask Keys" = "遮罩键位";
+"Passcode keys were reset." = "密码键位已重置。";
+"Reset Keys" = "重置键位";
+"Set" = "设定";
+"Successfully applied custom passcode keys!" = "自定义密码键位应用成功！";
+"Successfully reset passcode keys!" = "密码键位重置成功！";
+"This removes the current contents of /var/mobile/Library/Caches/TelephonyUI-10 on the device. Your selected theme remains available to apply again." = "这会删除设备上 /var/mobile/Library/Caches/TelephonyUI-10 的现有内容。你选择的主题仍可再次应用。";
+"What would you like the custom size to be?" = "自定义尺寸设为多少？";
+"Width" = "宽";
+
+/* ---- Erosion/Experimental/Airlift/ExperimentalWalletView.swift ---- */
+"Add" = "添加";
+"Add Card by Hash" = "按哈希添加卡片";
+"Airlift required" = "需要 Airlift";
+"Apple Wallet card artwork was overwritten successfully." = "Apple 钱包卡面已成功覆盖。";
+"Card artwork applied!" = "卡面应用成功！";
+"Card Editor" = "卡片编辑器";
+"Card hash / identifier" = "卡片哈希 / 标识符";
+"Clear Scan Results" = "清除扫描结果";
+"Enable LocalDevVPN and import a valid pairing file in Airlift." = "请启用 LocalDevVPN，并在 Airlift 中导入有效的配对文件。";
+"Enter the card identifier, then choose Get Current Artworks from the menu." = "输入卡片标识符，然后从菜单中选择「获取当前卡面」。";
+"Failed to apply card artwork!" = "卡面应用失败！";
+"Get Current Artworks" = "获取当前卡面";
+"No Cards Found" = "未找到卡片";
+"One or more card images could not be overwritten. Check the Card Editor logs for details." = "有一张或多张卡片图片无法覆盖。请查看卡片编辑器日志了解详情。";
+"Overlay Type" = "叠加类型";
+"Scan Apple Pay to show your cards here." = "扫描 Apple Pay 后，卡片会显示在这里。";
+"Scan Cards" = "扫描卡片";
+"Stop Scan" = "停止扫描";
+
+/* ---- Erosion/Experimental/Airlift/FindMyView.swift ---- */
+"All" = "全部权限";
+"App Decrypt" = "App 解密";
+"Are you sure you'd like to reset Find My images?" = "确定要重置查找 App 的图片吗？";
+"Both" = "两者都";
+"Failed to apply TCC image!" = "TCC 图片应用失败！";
+"Failed to export images" = "图片导出失败";
+"Failed to reset Find My images" = "查找 App 图片重置失败";
+"Find My" = "查找";
+"Find My images and the selected TCC preview were applied." = "查找 App 的图片与所选 TCC 预览已应用。";
+"Find My images were reset." = "查找 App 图片已重置。";
+"May not work" = "可能无效";
+"No cached image data is available for the scanned devices." = "扫描到的设备没有可用的缓存图片数据。";
+"Offline" = "离线";
+"Online" = "在线";
+"Reset" = "重置";
+"Restart Find My to see changes." = "重启「查找」以查看更改。";
+"Some changes could not be applied" = "部分更改无法应用";
+"Successfully applied images!" = "图片应用成功！";
+"Successfully reset Find My images!" = "查找 App 图片重置成功！";
+"TCC" = "TCC";
+"The device image directory could not be removed. Check the Airlift log." = "无法移除设备图片目录。请查看 Airlift 日志。";
+"This will reset Find My device images. Do you want to continue?" = "这将重置查找 App 的设备图片。是否继续？";
+
+/* ---- Erosion/Experimental/Airlift/PasscodeTheme.swift ---- */
+"Current Keys" = "当前键位";
+
+/* ---- Erosion/Experimental/Airlift/PasscodeThemeLibrary.swift ---- */
+"Delete" = "删除";
+"Failed to delete theme" = "主题删除失败";
+"Failed to import theme" = "主题导入失败";
+"Import .passthm yourself or from explore to start applying custom keys." = "请自行导入 .passthm，或从「探索」导入，以开始应用自定义键位。";
+"Imported into Library" = "已导入到库";
+"No matching themes" = "没有匹配的主题";
+"No passcode themes available" = "没有可用的密码界面主题";
+"No passcode themes imported!" = "尚未导入任何密码界面主题！";
+"Show Data Directory" = "显示数据目录";
+
+/* ---- Erosion/Experimental/Airlift/WalletCardSkinManager.swift ---- */
+"Default" = "默认";
+"Stretch" = "拉伸";
+
+/* ---- Erosion/FileManager/Browser/FileBrowserView.swift ---- */
+"Airlift write unavailable" = "Airlift 写入不可用";
+"Ascending" = "升序";
+"Container Fetching" = "容器获取";
+"Descending" = "降序";
+"Enable LocalDevVPN and make sure the pairing file is imported." = "请启用 LocalDevVPN，并确认已导入配对文件。";
+"Failed to create file!" = "文件创建失败！";
+"Failed to create folder!" = "文件夹创建失败！";
+"Failed to create property list!" = "属性列表创建失败！";
+"Failed to create symlink!" = "符号链接创建失败！";
+"Failed to import file!" = "文件导入失败！";
+"Failed to load files from directory!" = "无法从目录载入文件！";
+"File Browser Settings" = "文件浏览设置";
+"Folder" = "文件夹";
+"Folder Name" = "文件夹名称";
+"Grouped" = "分组";
+"Hide Dates" = "隐藏日期";
+"Import File" = "导入文件";
+"List Style" = "列表样式";
+"Max Inode" = "最大 Inode 数";
+"Monospaced Font" = "等宽字体";
+"Name" = "名称";
+"New..." = "新建…";
+"Open App Docs" = "打开 App 文稿";
+"Plain" = "朴素";
+"Plist Name" = "Plist 名称";
+"Property List" = "属性列表";
+"Size" = "大小";
+"Sort" = "排序";
+"Symlink" = "符号链接";
+"Symlink write unavailable" = "符号链接写入不可用";
+"Text Size" = "文字大小";
+"Text Viewer" = "文本查看器";
+"The current Airlift write API does not preserve a new symbolic link, so no local or remote change was made." = "当前 Airlift 写入接口无法保留新建的符号链接，因此本地与远程均未做任何更改。";
+"The remote Airlift directory creation failed. Check the Airlift log." = "远程 Airlift 目录创建失败。请查看 Airlift 日志。";
+"The remote Airlift write failed. Check the Airlift log." = "远程 Airlift 写入失败。请查看 Airlift 日志。";
+"These files could take 30 seconds or longer to load, since the method of getting container paths is very slow." = "这些文件可能需要 30 秒甚至更久才能载入，因为获取容器路径的方式非常慢。";
+"This controls how quickly files can load. Lower values = faster fetching but less files." = "控制文件载入速度。数值越低载入越快，但显示的文件越少。";
+"Type" = "类型";
+"View Options" = "视图选项";
+"What would you like to call your new file? Make sure you attach an extension at the end." = "新文件叫什么名字？请记得在末尾加上扩展名。";
+"What would you like to call your new folder?" = "新文件夹叫什么名字？";
+"What would you like to call your new property list?" = "新属性列表叫什么名字？";
+"Where would you like your new symlink to point to?" = "新符号链接要指向哪里？";
+
+/* ---- Erosion/FileManager/Browser/FileRow.swift ---- */
+"A copy with that name already exists." = "同名副本已存在。";
+"A file with that name already exists." = "同名文件已存在。";
+"An archive with that name already exists." = "同名压缩包已存在。";
+"Compress" = "压缩";
+"Copy" = "复制";
+"Duplicate" = "复制副本";
+"Extended Viewer" = "扩展查看器";
+"Failed to compress file!" = "文件压缩失败！";
+"Failed to copy file!" = "文件复制失败！";
+"Failed to delete file!" = "文件删除失败！";
+"Failed to duplicate file!" = "文件复制副本失败！";
+"Failed to rename file!" = "文件重命名失败！";
+"Failed to uncompress file!" = "文件解压失败！";
+"Failed to write extracted files!" = "解压出的文件写入失败！";
+"File Action Failed" = "文件操作失败";
+"Get Info" = "显示简介";
+"Plist Viewer" = "Plist 查看器";
+"Quick Look" = "快速查看";
+"Remote delete succeeded" = "远程删除成功";
+"Rename" = "重命名";
+"Restart Erosion" = "重启 Erosion";
+"Share" = "分享";
+"The archive was created locally, but the remote Airlift write failed. Check the Airlift log." = "压缩包已在本地创建，但远程 Airlift 写入失败。请查看 Airlift 日志。";
+"The archive was extracted locally, but one or more remote Airlift writes failed. Check the Airlift log." = "压缩包已在本地解压，但有一项或多项远程 Airlift 写入失败。请查看 Airlift 日志。";
+"The remote Airlift delete failed. The local snapshot was kept unchanged. Check the Airlift log." = "远程 Airlift 删除失败。本地快照保持不变。请查看 Airlift 日志。";
+"The remote Airlift rename failed. Check the Airlift log." = "远程 Airlift 重命名失败。请查看 Airlift 日志。";
+"Unable to Open File" = "无法打开文件";
+"Uncompress" = "解压";
+"View In..." = "用其他方式打开…";
+"What would you like to call this file?" = "此文件要重命名为什么？";
+
+/* ---- Erosion/FileManager/Browser/FolderRow.swift ---- */
+"A folder with that name already exists." = "同名文件夹已存在。";
+"Failed to compress folder!" = "文件夹压缩失败！";
+"Failed to delete folder!" = "文件夹删除失败！";
+"Failed to rename folder!" = "文件夹重命名失败！";
+"What would you like to call this folder?" = "此文件夹要重命名为什么？";
+
+/* ---- Erosion/FileManager/FMRootView.swift ---- */
+"App Groups" = "App Group";
+"Apps" = "应用";
+"Bin" = "Bin";
+"Daemon Containers" = "守护进程容器";
+"Data Containers" = "数据容器";
+"Mobile Library" = "Mobile 资源库";
+"Mobile Media" = "Mobile 媒体";
+"Plugin Containers" = "插件容器";
+"Read-only" = "只读";
+"Sbin" = "Sbin";
+"Staged System Apps" = "暂存的系统 App";
+"System" = "系统";
+"System Containers" = "系统容器";
+"System Directories" = "系统目录";
+"SystemGroup Containers" = "SystemGroup 容器";
+"Unable to read file." = "无法读取文件。";
+"Workspace" = "工作区";
+
+/* ---- Erosion/FileManager/Viewers/FilePreviewView.swift ---- */
+"Architecture" = "架构";
+"Executable" = "可执行";
+"File is empty." = "文件为空。";
+"File size" = "文件大小";
+"File type" = "文件类型";
+"Flags" = "标志";
+"Info" = "信息";
+"Load command bytes" = "加载命令字节数";
+"Load commands" = "加载命令";
+"Loading video…" = "正在载入视频…";
+"Loading…" = "正在载入…";
+"Mach-O" = "Mach-O";
+"Offset    Hex bytes       ASCII" = "偏移    十六进制字节       ASCII";
+"Unable to Open Image" = "无法打开图片";
+"Unable to Play Video" = "无法播放视频";
+
+/* ---- Erosion/FileManager/Viewers/InfoViewer.swift ---- */
+"Copy Value" = "复制值";
+"Creation Date" = "创建日期";
+"Destination Path" = "目标路径";
+"Group" = "所属组";
+"Last Modified" = "修改日期";
+"Owner" = "所有者";
+"Permissions" = "权限";
+"POSIX Permissions" = "POSIX 权限";
+"Readable" = "可读";
+"UTType" = "UTType";
+"Writable" = "可写";
+
+/* ---- Erosion/FileManager/Viewers/Plist/ItemRow.swift ---- */
+"Copy..." = "复制…";
+"Key" = "键";
+"Value" = "值";
+
+/* ---- Erosion/FileManager/Viewers/Plist/ModifyItemPage.swift ---- */
+"Add Item" = "添加项";
+"Delete Item" = "删除项";
+"Edit" = "编辑";
+"Failed to delete plist item!" = "删除 Plist 条目失败！";
+"Failed to write plist items!" = "写入 Plist 条目失败！";
+"Identity" = "标识";
+"Save" = "保存";
+
+/* ---- Erosion/FileManager/Viewers/Plist/PlistManager.swift ---- */
+"Airlift write failed" = "Airlift 写入失败";
+"Array" = "数组";
+"Boolean" = "布尔值";
+"Data" = "数据";
+"Dictionary" = "字典";
+"Double" = "浮点数";
+"Integer" = "整数";
+"String" = "字符串";
+"The local snapshot was updated, but writing it back to the device failed. Check the Airlift log." = "本地快照已更新，但写回设备失败。请查看 Airlift 日志。";
+
+/* ---- Erosion/FileManager/Viewers/Plist/PlistViewer.swift ---- */
+"Failed to load plist!" = "Plist 载入失败！";
+"View-Only File" = "只读文件";
+"You can only read this file." = "此文件只能查看。";
+
+/* ---- Erosion/FileManager/Viewers/TextViewer.swift ---- */
+"Menu" = "菜单";
+
+/* ---- Erosion/HomeThemingExploreView.swift ---- */
+"Couldn't load wallpapers" = "无法载入壁纸";
+"Failed to import wallpaper" = "壁纸导入失败";
+"Imported into Wallpapers" = "已导入到壁纸";
+"No matching wallpapers" = "没有匹配的壁纸";
+"No wallpapers available" = "暂无可用壁纸";
+"Passcode" = "密码";
+
+/* ---- Erosion/Tweaks/ConfigView.swift ---- */
+"Are you sure you'd like to reset your tweaks?" = "确定要重置你的调整项吗？";
+"Configurations" = "配置";
+"Custom Footnote" = "自定义脚注";
+"Enable Supervision" = "启用监督";
+"Failed to apply tweaks!" = "调整应用失败！";
+"Failed to create footnote file!" = "脚注文件创建失败！";
+"Failed to get write access!" = "获取写入权限失败！";
+"Failed to reset tweaks!" = "调整重置失败！";
+"Organization Name" = "组织名称";
+"Restore Tweaks" = "还原调整";
+"Successfully appiled config tweaks!" = "配置调整应用成功！";
+"Successfully reset config tweaks!" = "配置调整重置成功！";
+"Supervision" = "监督";
+"Supervision Warning!" = "监督警告！";
+
+/* ---- Erosion/Tweaks/Keypads/KeypadView.swift ---- */
+"Are you sure you'd like to reset your set keys?" = "确定要重置已设置的键位吗？";
+"Dialer Themer" = "拨号键盘主题";
+"Failed to apply custom keypads!" = "自定义拨号键盘应用失败！";
+"Failed to reset dialer keys!" = "拨号键盘键位重置失败！";
+"Import" = "导入";
+"Open Phone" = "打开电话";
+"Successfully applied custom keypads!" = "自定义拨号键盘应用成功！";
+"Successfully reset dialer keys!" = "拨号键盘键位重置成功！";
+
+/* ---- Erosion/Tweaks/MobileGestalt/AdvancedKeyEditorView.swift ---- */
+"Advanced Key Editor" = "高级键编辑器";
+"CacheData" = "CacheData";
+"CacheData Empty" = "CacheData 为空";
+"CacheData is not present in this MobileGestalt cache." = "此 MobileGestalt 缓存中不存在 CacheData。";
+"CacheExtra" = "CacheExtra";
+"Edit Value" = "编辑值";
+"Empty dictionary" = "空字典";
+"MobileGestalt" = "MobileGestalt";
+"MobileGestalt Saved" = "MobileGestalt 已保存";
+"No editable entries were found." = "未找到可编辑的条目。";
+"No Keys" = "没有键";
+"Reload" = "重新载入";
+"Search keys" = "搜索键";
+"The edited MobileGestalt cache was written and verified on disk." = "已编辑的 MobileGestalt 缓存已写入并通过磁盘校验。";
+
+/* ---- Erosion/Tweaks/MobileGestalt/CustomKeyView.swift ---- */
+"Add Key" = "添加键";
+"Add Keys" = "添加键";
+"Custom Keys" = "自定义键";
+"Modify Key" = "修改键";
+"Scroll to that key if you'd like to modify it." = "如需修改，请滚动到该键的位置。";
+"This key has already been added!" = "该键已添加过了！";
+"This seems like an invaild key!" = "这个键似乎无效！";
+"Try putting something inside of this field, and then try again!" = "请先在此栏填写内容，然后再试一次！";
+
+/* ---- Erosion/Tweaks/MobileGestalt/GestaltStore.swift ---- */
+"Warning!" = "警告！";
+
+/* ---- Erosion/Tweaks/MobileGestalt/GestaltView.swift ---- */
+"Action Button" = "操作按钮";
+"Apple Intelligence (Classic)" = "Apple Intelligence（经典）";
+"Apple Pencil" = "Apple Pencil";
+"Are you sure you'd like to reset MobileGestalt?" = "确定要重置 MobileGestalt 吗？";
+"Artwork" = "外观图";
+"Before you begin..." = "开始之前…";
+"Camera Control" = "相机控制";
+"Crash Detection" = "车祸检测";
+"Custom Device Name" = "自定义设备名称";
+"Device Name" = "设备名称";
+"Device Spoofing Info" = "设备伪装说明";
+"Disable Dynamic Island" = "关闭灵动岛";
+"Disable Region Restrictions" = "关闭地区限制";
+"Eligibility" = "资格";
+"Enable AOD" = "启用 AOD";
+"Enable AOD Vibrancy" = "启用 AOD 通透效果";
+"Enable Apple Intelligence" = "启用 Apple Intelligence";
+"Enable Boot Chime" = "启用开机音效";
+"Enable Charge Limit" = "启用充电上限";
+"Enable Dynamic Island" = "启用灵动岛";
+"Enable Internal Build" = "启用内部版本";
+"Enable Internal Install" = "启用内部安装";
+"Enable iPadOS UI" = "启用 iPadOS 界面";
+"Enable SRD UI" = "启用 SRD UI";
+"Enable Stage Manager" = "启用台前调度";
+"Exit App" = "退出 App";
+"Export Current Gestalt" = "导出当前 Gestalt";
+"Export Original Gestalt" = "导出原始 Gestalt";
+"Failed to apply MobileGestalt!" = "MobileGestalt 应用失败！";
+"Failed to get MobileGestalt!" = "无法获取 MobileGestalt！";
+"Failed to get write access to MobileGestalt!" = "无法获取 MobileGestalt 的写入权限！";
+"Failed to reset MobileGestalt!" = "MobileGestalt 重置失败！";
+"Failed to revert MobileGestalt!" = "MobileGestalt 还原失败！";
+"Gestalt Settings" = "Gestalt 设置";
+"Hardware Features" = "硬件特性";
+"Important Warning!" = "重要警告！";
+"Internal" = "内部";
+"iPadOS UI" = "iPadOS 界面";
+"iPhone X Gestures" = "iPhone X 手势";
+"Persist after reboot" = "重启后保持";
+"Preference Bundles" = "偏好设置包";
+"Pulse Width Modulation" = "PWM 调光";
+"Region Restrictions" = "地区限制";
+"Reset Gestalt" = "重置 Gestalt";
+"Reset Saved Gestalt" = "重置已保存的 Gestalt";
+"Revert Tweaks" = "还原调整";
+"Show Custom Keys" = "显示自定义键";
+"Show Hidden Tweaks" = "显示隐藏的调整项";
+"Spoofing" = "伪装";
+"Subtype" = "子类型";
+"Subtype Info" = "子类型说明";
+"Successfully appiled MobileGestalt tweaks!" = "MobileGestalt 调整应用成功！";
+"Successfully reset MobileGestalt!" = "MobileGestalt 重置成功！";
+"Successfully reverted MobileGestalt tweaks!" = "MobileGestalt 调整已还原！";
+"Tap to Wake" = "轻点唤醒";
+"Tweaks will NOT apply. Maybe try restarting the app?" = "调整将不会生效。请尝试重启 App？";
+"Tweaks will not work properly. Please leave this page." = "调整无法正常工作。请离开此页面。";
+"When enabled, MobileGestalt is written in-place on the same inode, which helps prevent iOS from regenerating the cache after a reboot." = "启用后，MobileGestalt 会就地写入同一个 inode，有助于避免 iOS 在重启后重新生成缓存。";
+
+/* ---- Erosion/Tweaks/Other/AppsManagementView.swift ---- */
+"Check that LocalDevVPN is enabled and a pairing file is imported, then return to this screen." = "请确认已启用 LocalDevVPN 并导入了配对文件，然后返回此页面。";
+"Decrypt" = "解密";
+"Installed Apps" = "已安装的 App";
+"Loading installed applications…" = "正在载入已安装的 App…";
+"No installed apps found" = "未找到已安装的应用";
+"Prepare" = "准备";
+"Prepared" = "已准备";
+"Preparing…" = "准备中…";
+
+/* ---- Erosion/Tweaks/Other/LayoutsView.swift ---- */
+"Delete this saved layout?" = "删除此已保存的布局？";
+"Failed to get current layout" = "获取当前布局失败";
+"Failed to import layout" = "布局导入失败";
+"Failed to read IconState.plist" = "读取 IconState.plist 失败";
+"Failed to reset layout" = "布局重置失败";
+"IconState.plist deleted" = "IconState.plist 已删除";
+"Invalid IconState.plist" = "IconState.plist 无效";
+"Layout name" = "布局名称";
+"Layout unavailable" = "布局不可用";
+"Layouts" = "布局";
+"No saved layouts" = "没有已保存的布局";
+"Only the name shown in Erosion will change. The exported IconState.plist filename stays the same." = "仅更改 Erosion 中显示的名称，导出的 IconState.plist 文件名保持不变。";
+"Rename Layout" = "重命名布局";
+"Reset the current layout?" = "重置当前布局？";
+"The current layout file was removed from the device." = "当前布局文件已从设备上移除。";
+"The saved IconState.plist could not be found." = "找不到已保存的 IconState.plist。";
+"This removes the selected layout from Erosion. It does not change the layout on the device." = "这只会从 Erosion 中移除所选布局，不会更改设备上的布局。";
+"This will restore the device's Home Screen layout state. Saved layouts in Erosion will remain available." = "这将恢复设备的主屏幕布局状态。Erosion 中已保存的布局仍会保留。";
+
+/* ---- Erosion/Tweaks/Other/OperationsView.swift ---- */
+"Access Granted" = "已授予访问权限";
+"Airlift reported a successful write to the exact target path." = "Airlift 报告已成功写入确切的目标路径。";
+"Change Path" = "更改路径";
+"Check Home → Logs for the Airlift File Operations result." = "前往 主页 → 日志 查看 Airlift 文件操作结果。";
+"Choose the target type before Airlift starts reading." = "请在 Airlift 开始读取前选择目标类型。";
+"Delete remote target?" = "删除远程目标？";
+"Export File" = "导出文件";
+"Failed to get access to target file!" = "无法访问目标文件！";
+"Failed to get access to target!" = "无法访问目标！";
+"Failed to move file" = "文件移动失败";
+"Failed to move file!" = "文件移动失败！";
+"Failed to overwrite file" = "文件覆盖失败";
+"Failed to overwrite file!" = "文件覆盖失败！";
+"File moved" = "文件已移动";
+"File Name" = "文件名";
+"File Operations" = "文件操作";
+"File overwritten" = "文件已覆盖";
+"Grant Access" = "授予访问权限";
+"Grant Access again to read and save a new snapshot." = "请重新「授予访问权限」以读取并保存新的快照。";
+"Make sure that your paths are correct and that you have access. Check error logs for more detailed information." = "请确认路径正确且已获得访问权限。查看错误日志以获取更详细的信息。";
+"Move File" = "移动文件";
+"Operations" = "操作";
+"Overwrite File" = "覆盖文件";
+"Remote target deleted" = "远程目标已删除";
+"Snapshot unavailable" = "快照不可用";
+"This file is likely invaild, corrupted, or inaccessible. Please try a different overwrite file." = "此文件可能无效、已损坏或无法访问。请换一个覆盖文件重试。";
+"This will delete the remote file or directory at the entered path. This cannot be undone." = "这将删除所输入路径上的远程文件或目录，且无法撤销。";
+"What are you reading?" = "你要读取什么？";
+
+/* ---- Erosion/Tweaks/Other/TCCView.swift ---- */
+"Allow" = "允许";
+"Allow “Erosion” to use %@?" = "允许“Erosion”使用%@？";
+"Bluetooth" = "蓝牙";
+"Camera" = "相机";
+"Choose preview image from Photos" = "从照片中选择预览图片";
+"Contacts" = "通讯录";
+"Don’t Allow" = "不允许";
+"Face/Touch ID" = "面容/触控 ID";
+"Failed to reset TCC image!" = "TCC 图片重置失败！";
+"Location" = "定位";
+"Microphone" = "麦克风";
+"Permission" = "权限";
+"Photos" = "照片";
+"This is a preview of how TCC notifications will look." = "这是 TCC 通知效果的预览。";
+"This will reset the selected preview state. Do you want to continue?" = "这将重置所选预览状态。是否继续？";
+
+/* ---- Erosion/Tweaks/PosterBoard/PosterBoardView.swift ---- */
+"Airlift injected the selected wallpapers. Open PosterBoard and close it to refresh the wallpaper list." = "Airlift 已注入所选壁纸。打开 PosterBoard 后再关闭，即可刷新壁纸列表。";
+"Airlift pairing required" = "需要 Airlift 配对";
+"Clear Imports" = "清除导入";
+"Continue" = "继续";
+"Enable LocalDevVPN and make sure the pairing file is imported, then apply the wallpapers again." = "请启用 LocalDevVPN 并确认已导入配对文件，然后重新应用壁纸。";
+"Erosion could not locate the PosterBoard container. Please try again." = "Erosion 无法定位 PosterBoard 容器。请重试。";
+"Failed to apply wallpapers!" = "壁纸应用失败！";
+"Failed to find PosterBoard container" = "找不到 PosterBoard 容器";
+"Failed to import .tendies!" = ".tendies 导入失败！";
+"Failed to setup PosterBoard tweaks!" = "PosterBoard 调整设置失败！";
+"Fetch Path" = "获取路径";
+"If you're having trouble applying custom wallpapers, try resetting any of the three extensions listed." = "如果自定义壁纸应用失败，可尝试重置下面三个扩展中的任意一个。";
+"Import .tendies" = "导入 .tendies";
+"Import or pair Airlift first, then fetch the PosterBoard container path again." = "请先导入或配对 Airlift，然后重新获取 PosterBoard 容器路径。";
+"Max wallpaper limit reached!" = "已达到壁纸数量上限！";
+"No tendies imported!" = "尚未导入任何 tendies！";
+"Open PosterBoard" = "打开 PosterBoard";
+"PosterBoard Path" = "PosterBoard 路径";
+"PosterBoard path required" = "需要 PosterBoard 路径";
+"PosterBoard Settings" = "PosterBoard 设置";
+"Reset Collections" = "重置 Collections";
+"Reset MercuryPoster" = "重置 MercuryPoster";
+"Reset Videos" = "重置视频";
+"Restart PosterBoard to finish applying!" = "重启 PosterBoard 以完成应用！";
+"Show Data Folder" = "显示数据文件夹";
+"Some of the wallpapers you selected have already been added." = "你所选的壁纸中有部分已经添加过了。";
+"Use PosterBoard Settings → Fetch Path to locate the container before resetting wallpaper data." = "请先在 PosterBoard 设置 → 获取路径 中定位容器，再重置壁纸数据。";
+"Wallpapers applied!" = "壁纸应用成功！";
+
+/* ---- Erosion/Tweaks/TweaksView.swift ---- */
+"Cards Overwrite" = "卡片覆盖";
+"Config Tweaks" = "配置调整";
+"Custom Wallpapers" = "自定义壁纸";
+
+/* ---- Erosion/UI/Interactions/PlainToggle.swift ---- */
+"Information" = "信息";

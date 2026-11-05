@@ -19,7 +19,7 @@ struct HomeThemingExploreView: View {
             VStack(spacing: 14) {
                 Picker("Explore", selection: $selectedCategory) {
                     ForEach(HomeThemingCategory.allCases) { category in
-                        Text(category.rawValue).tag(category)
+                        Text(localized: category.rawValue).tag(category)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -304,7 +304,7 @@ private struct WallpaperExploreContent: View {
             Haptic.shared.play(.soft)
             Alertinator.shared.alert(
                 title: "Imported into Wallpapers",
-                body: "\(wallpaper.name) has been added to Custom Wallpapers."
+                body: "\(wallpaper.name) 已添加到自定义壁纸。"
             )
         } catch {
             Alertinator.shared.alert(title: "Failed to import wallpaper", body: error.localizedDescription)

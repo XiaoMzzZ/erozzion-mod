@@ -242,7 +242,7 @@ private struct SystemReadOnlyTextViewer: View {
                 .padding(.bottom, 6)
         }
         .onAppear {
-            text = (try? String(contentsOf: fileURL, encoding: .utf8)) ?? "Unable to read file."
+            text = (try? String(contentsOf: fileURL, encoding: .utf8)) ?? localized("Unable to read file.")
         }
     }
 }
