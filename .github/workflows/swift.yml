@@ -17,7 +17,10 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    # macos-15 而不是 macos-latest：macOS 26 arm64 机器池长期排队，
+    # 任务会在 15 分钟后因 "not acquired by Runner" 被取消。
+    # macos-15 同样是免费标准 runner，且自带 Xcode 26.x。
+    runs-on: macos-15
 
     steps:
       - name: Checkout
@@ -25,7 +28,11 @@ jobs:
 
       - name: Select Xcode
         run: |
-          sudo xcode-select -s /Applications/Xcode.app
+          # 镜像默认的 Xcode.app 指向 16.4（iOS 18 SDK），而本工程
+          # IPHONEOS_DEPLOYMENT_TARGET = 26.0，必须显式切到 26.x。
+          XCODE_APP="$(ls -d /Applications/Xcode_26.*.app 2>/dev/null | sort -V | tail -1)"
+          if [ -z "$XCODE_APP" ]; then XCODE_APP=/Applications/Xcode.app; fi
+          sudo xcode-select -s "$XCODE_APP"
           xcodebuild -version
           xcode-select -p
 
