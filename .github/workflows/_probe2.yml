@@ -1,0 +1,12 @@
+name: macOS probe
+on:
+  workflow_dispatch:
+jobs:
+  m15:
+    runs-on: macos-15
+    steps:
+      - run: echo OK15
+  m26:
+    runs-on: macos-26
+    steps:
+      - run: echo OK26
